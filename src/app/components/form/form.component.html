@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Weather Forecast</h1>
+  <div class="form">
+    <label for="city" class="label">Select a city:</label>
+    <select
+      class="select btn btn-primary dropdown-toggle"
+      id="city"
+      [(ngModel)]="selectedCity"
+      (ngModelChange)="selectedCity = $event"
+    >
+      <option value="" disabled>-- Select --</option>
+      <option
+        *ngFor="let city of cities; trackBy: trackByFn"
+        [value]="city"
+        class="dropdown-item"
+      >
+        {{ city }}
+      </option>
+    </select>
+  </div>
+</div>

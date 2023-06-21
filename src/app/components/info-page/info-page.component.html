@@ -1,0 +1,23 @@
+<div *ngIf="forecast$ | async as forecast" class="weather-card">
+  <h2 class="city-name">{{ forecast.name }}</h2>
+  <dl class="row">
+    <dt class="col-sm-3 value">Temperature:</dt>
+    <dd class="col-sm-9 value">{{ forecast.main.temp }}°C</dd>
+    <dt class="col-sm-3 value">Humidity:</dt>
+    <dd class="col-sm-9 value">{{ forecast.main.humidity }}%</dd>
+    <dt class="col-sm-3 value">Pressure:</dt>
+    <dd class="col-sm-9 value">{{ forecast.main.pressure }}hPa</dd>
+    <dt class="col-sm-3 value">Wind Speed:</dt>
+    <dd class="col-sm-9 value">{{ forecast.wind.speed }} m/s</dd>
+    <dt class="col-sm-3 value">Sunrise:</dt>
+    <dd class="col-sm-9 value">
+      {{ forecast.sys.sunrise * 1000 | date : "shortTime" }}
+    </dd>
+    <dt class="col-sm-3 value">Sunset:</dt>
+    <dd class="col-sm-9 value">
+      {{ forecast.sys.sunset * 1000 | date : "shortTime" }}
+    </dd>
+    <dt class="col-sm-3 value">Description:</dt>
+    <dd class="col-sm-9 value">{{ forecast.weather[0].description }}</dd>
+  </dl>
+</div>

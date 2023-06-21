@@ -1,0 +1,22 @@
+.weather-card {
+  margin: 0 auto;
+  min-width: 600px;
+  padding: 20px;
+  width: 300px;
+  background-color: #ffffff;
+  border: 0.5px solid gray;
+  border-radius: 8px;
+
+  .city-name {
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  .value {
+    font-size: 20px;
+  }
+}
