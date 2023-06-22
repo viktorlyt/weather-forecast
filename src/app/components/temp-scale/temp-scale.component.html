@@ -1,0 +1,11 @@
+<label for="scale" class="label">Select a temperature scale:</label>
+<select
+  class="select btn btn-primary dropdown-toggle"
+  id="scale"
+  [(ngModel)]="selectedScale"
+  (ngModelChange)="updateScale($event)"
+>
+  <option value="kelvin">Kelvin</option>
+  <option value="celsius">Celsius</option>
+  <option value="fahrenheit">Fahrenheit</option>
+</select>

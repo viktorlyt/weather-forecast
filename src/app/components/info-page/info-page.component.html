@@ -2,7 +2,9 @@
   <h2 class="city-name">{{ forecast.name }}</h2>
   <dl class="row">
     <dt class="col-sm-3 value">Temperature:</dt>
-    <dd class="col-sm-9 value">{{ forecast.main.temp }}°C</dd>
+    <dd class="col-sm-9 value">
+      {{ getTemperature(forecast.main.temp, selectedScale$ | async) }}
+    </dd>
     <dt class="col-sm-3 value">Humidity:</dt>
     <dd class="col-sm-9 value">{{ forecast.main.humidity }}%</dd>
     <dt class="col-sm-3 value">Pressure:</dt>
@@ -21,3 +23,13 @@
     <dd class="col-sm-9 value">{{ forecast.weather[0].description }}</dd>
   </dl>
 </div>
+
+<ng-template #loadingTemplate>
+  <div class="loading-message">Loading forecast...</div>
+</ng-template>
+
+<ng-template #errorTemplate>
+  <div class="error-message">
+    Error: {{ (forecast$ | async) || errorMessage }}
+  </div>
+</ng-template>

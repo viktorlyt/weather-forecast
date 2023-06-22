@@ -4,7 +4,7 @@ import { ForecastService } from 'src/app/services/forecast.service';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  styleUrls: ['./form.component.scss'],
 })
 export class FormComponent {
   constructor(private forecastService: ForecastService) {}
